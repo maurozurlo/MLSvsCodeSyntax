@@ -6,7 +6,7 @@ for Visual Studio Code (TextMate format)
 I'm really a novice at this so feel free to contribute! 
 
 ## Installation
- 1. Place srce folder inside user\.vscode\extensions
+ 1. Place srce folder inside ```user\.vscode\extensions```
  2. Restart Visual Studio Code
  
 
