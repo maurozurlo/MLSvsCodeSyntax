@@ -1,0 +1,80 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "MLS (Manhunt Level Script)",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#variables"
+		},
+		{
+			"include": "#functions"
+		},
+		{
+			"include": "#keywords2"
+		},
+		{
+			"include": "#scope"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.srce",
+				"match": "(?i)\\b(case|else|entity|if|procedure|script|scriptmain|type|var)\\b"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.srce",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.srce",
+					"match": "\\\\."
+				}
+			]
+		},
+		"comments":{
+			"name": "comment",
+			"begin": "{",
+			"end": "}"
+		},
+		"variables":{
+			"patterns":[
+				{
+					"name": "variable",
+					"match": "(?i)\\b(boolean|entityptr|integer|string|vec3d)\\b"
+				}]
+		},
+		"functions":{
+			"patterns": [
+				{
+					"name": "entity.name.function",
+					"match": "(?i)\\b(aiaddentity|aiaddgoalforsubpack|aiaddhuntertoleadersubpack|aiaddleaderenemy|aiaddplayer|aiaddsubpackforleader|aicancelhunteridleaction|aicutsceneentityenable|aidefinegoalgotonode|aidefinegoalgotonodeidle|aidefinegoalhidenamedhunter|aidefinegoalhuntenemy|aientityalwaysenabled|aientitycancelanim|aientitygohomeifidle|aientityplayanim|aientityplayanimlooped|aiignoreentityifdead|aiisgoalnameinsubpack|aiisidle|ailookatentity|aimakeentityblind|aimakeentitydeaf|aiplaycommunication|airemovegoalfromsubpack|airemovehunterfromleadersubpack|aisetentityallowsurprise|aisetentityasleader|aisetentityidleoverride|aisetentitystayonpath|aisethunteridleaction|aisethunteridleactionminmax|aisethunteridleactionminmaxradius|aisethunteridlepatrol|aisethunteronradar|aisetidlehomenode|aisetidlepatrolstop|aisetidletalkprobability|aisetleaderinvisible|aisetsubpackcombattype|aitriggersound|aitriggersoundknownlocationnoradar|applyforcetophysicsobject|attachtoentity|calcdistancetoentity|clearalllevelgoals|clearlevelgoal|createboxtrigger|createspheretrigger|cutscenecamerainit|cutscenecamerasetfov|cutscenecamerasethandycam|cutscenecamerasetpos|cutscenecamerasetroll|cutscenecamerasettarget|cutscenecamerastart|cutsceneend|cutsceneregisterskipscript|cutscenestart|deactivatesavepoint|decreasecounter|destroyentity|disableuserinput|displaygametext|enableaction|enableuseable|enableuserinput|endscriptaudiostream|entityignorecollisions|entityplayanim|fakehunterdestroyall|frisbeespeechisfinished|frisbeespeechplay|getambientaudiotrack|getanimationlength|getcameraposition|getdamage|getdifficultylevel|getdoorstate|getdropposforplayerpickups|getentity|getentityname|getentityposition|getlastitempickedup|getpedorientation|getplayer|getplayerposition|graphmodifyconnections|helisetlight|helisetmovespeed|hideentity|hidetimer|hudtoggleflashflags|hunteruseswitch|incrementcounter|insidetrigger|iscutsceneinprogress|isentityalive|isexecutioninprogress|isfrisbeespeechcompleted|isgametextdisplaying|ishunterknockeddown|isnameditemininventory|isplayercarryingbody|isplayerinsafezone|isplayerpositionknown|isplayerrunning|isplayersprinting|isplayerwalking|isplayerwallsquashed|isscriptaudiostreamcompleted|iswhitenoisedisplaying|killentity|killentitywithoutanim|killgametext|killscript|killthisscript|lockentity|lockped|moveentity|movemovertoidleposition|playaudioloopedfromentity|playaudiooneshotfromentity|playerdropbody|playerfullbodyanimdone|playerignorethisentity|playerplayfullbodyanim|playscriptaudiostreamauto|playscriptaudiostreamfromentityauto|playscriptaudiostreamfromentityautolooped|playscriptaudiostreamfromposauto|playscriptaudiostreamfromposautolooped|radarpositionclearentity|radarpositionsetentity|randnum|registernonexecutablehunterinlevel|removeentity|removescript|removethisscript|runscript|scripthogprocessorstart|setambientaudiotrack|setcameraposition|setcameraview|setcolourramp|setcurrentlod|setdamage|setdoorstate|setentityfade|setentityinvulnerable|setentityscriptsfromentity|sethunterexecutable|sethunterhidehealth|sethuntermeleetraits|sethuntermute|sethunterrunspeed|setlevelcompleted|setlevelgoal|setmaxnumberofrats|setmaxscoreforlevel|setmoveridleposition|setmoverspeed|setmoverstate|setnextlevelbyname|setpeddonotdecay|setpedhurtotherpeds|setpedlockonable|setpedorientation|setplayercontrollable|setplayergotonode|setplayerheading|setplayerjumpflag|setqtmbaseprobability|setshowhudincutscene|setslidedoorajardistance|setslidedoorspeed|setstreamlipsyncspeaker|setswitchstate|settimer|setvector|setzoomlerp|showcounter|showentity|showtimer|sleep|spawnentitywithdirection|spawnentitywithvelocity|spawnmovingentity|starttimer|stoptimer|switchlightoff|switchlighton|switchlitteron|thislevelbeencompletedalready|togglehudflag|triggeraddentityclass|triggerremoveentityclass|triggersavepoint|unfreezeentity|unlockentity|writedebug|writedebugflush)\\b"
+				}]
+		},
+		"keywords2":{
+			"patterns":[
+				{
+					"name": "entity.name.type",
+					"match": "(?i)\\b(aiscript_graphlink_allow_everything;aiscript_graphlink_allow_nothing;aiscript_highpriority;aiscript_idle_patrol;aiscript_idle_standanims;aiscript_idle_standstill;aiscript_idle_wandersearch;aiscript_lowpriority;aiscript_mediumpriority;aiscript_runmovespeed;aiscript_veryhighpriority;aiscript_walkmovespeed;col_hunter;col_player;combattypeid_cover;combattypeid_melee;combattypeid_open_melee;ct_g_first_aid;ct_syringe;difficulty_normal;door_closed;door_closing;door_open;door_opening;hid_all_player_items;hid_radar;map_color_blue;map_color_hunter_idle;map_color_location;map_color_red;map_color_yellow;mover_forward;mover_stopped;mtt_hood_medium;mtt_training)\\b"
+				}]
+		},
+		"scope":{
+			"patterns":[
+				{
+					"name": "markup.heading",
+					"match": "(?i)\\b(begin|end|forward)\\b"
+				}]
+		}
+	},
+	"scopeName": "source.srce"
+}

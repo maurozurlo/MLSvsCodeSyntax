@@ -1,0 +1,25 @@
+{
+    "name": "srce",
+    "displayName": "srce",
+    "description": "Manhunt level script",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.33.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "srce",
+            "aliases": ["MLS (Manhunt Level Script)", "srce"],
+            "extensions": [".srce"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "srce",
+            "scopeName": "source.srce",
+            "path": "./syntaxes/srce.tmLanguage.json"
+        }]
+    }
+}
